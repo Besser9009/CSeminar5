@@ -10,17 +10,27 @@ int [] Array(int length)
 }
 (int Positiv, int Negativ) GetSum(int []array)
 {
-    int SumPositiv = 0;
-    int SumNegativ = 0;
+    int SumPositive = 0;
+    int SumNegative = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i] >= 0) SumPositiv += array[i];
-        else SumNegativ += array[i];
+        if (array[i] >= 0) SumPositive += array[i];
+        else SumNegative += array[i];
     }
-    Console.WriteLine($"SumPositiv = {SumPositiv}");
-    Console.WriteLine($"SumNegativ = {SumNegativ}");
-    return (SumNegativ, SumPositiv);
+    Console.WriteLine($"SumPositiv = {SumPositive}");
+    Console.WriteLine($"SumNegativ = {SumNegative}");
+    return (SumNegative, SumPositive);
 }
 int []array = Array(12);
 Console.WriteLine($"[{String.Join(", ", array)}]");
 GetSum(array);
+int [] GetReverce(int []array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = -array[i];
+    }
+    System.Console.WriteLine($"[{String.Join(", ", array)}]");
+    return array;
+}
+GetReverce(array);
